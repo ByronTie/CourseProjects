@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3 and the DOM</title>
+</head>
+<body>
+  <h1 id="page-title">This is my first D3 example!</h1>
+  <p class="first-paragraph">Here's my first paragraph.</p>
+  <p>Here are some reasons why d3 is cool:</p>
+  <ol>
+    <li>Makes data more engaging.</li>
+    <li>Has built-in math helpers.</li>
+    <li>Supports graph animations.</li>
+    <li>Makes drawing graph axes a breeze!</li>
+  </ol>
+  <div class="outer">
+    Here's an outer div.
+    <div>
+      Here's an inner div.
+      <div>
+        Here's the last div.
+      </div>
+    </div>
+  </div>
+
+  <svg
+    version="1.1"
+    baseProfile="full"
+    xmlns="http://www.w3.org/2000/svg"
+    style="border: 1px solid black; width: 800px; height: 400px">
+    <g stroke-width="5px" stroke="blue">
+      <line 
+        x1="100" y1="100" x2="700" y2="350"></line>
+      <line 
+        x1="100" y1="350" x2="700" y2="100"></line>
+    </g>
+    
+  </svg>
+
+  <script src="https://d3js.org/d3.v4.js"></script>
+</body>
+</html>
