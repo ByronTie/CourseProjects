@@ -6,9 +6,9 @@ Examples:
     doubleValues([5,1,2,3,10]) // [10,2,4,6,20]
 
 */
-function doubleValues(arr){
+function doubleValues(arr) {
     var newArr = [];
-    arr.forEach(function(val) {
+    arr.forEach(function (val) {
         newArr.push(val * 2);
     });
     return newArr;
@@ -22,9 +22,9 @@ Examples:
     onlyEvenValues([5,1,2,3,10]) // [2,10]
 
 */
-function onlyEvenValues(arr){
+function onlyEvenValues(arr) {
     var newArr = [];
-    arr.forEach(function(val) {
+    arr.forEach(function (val) {
         if (val % 2 === 0) {
             newArr.push(val);
         }
@@ -40,13 +40,13 @@ Examples:
     showFirstAndLast(['hi', 'goodbye', 'smile']) // ['hi', 'ge', 'se']
 
 */
-function showFirstAndLast(arr){
+function showFirstAndLast(arr) {
     var newArr = [];
-	arr.forEach(function(val) {
-		var abbr = val[0] + val[val.length - 1];
-		newArr.push(abbr);
-	});
-	return newArr;
+    arr.forEach(function (val) {
+        var abbr = val[0] + val[val.length - 1];
+        newArr.push(abbr);
+    });
+    return newArr;
 }
 
 /*
@@ -58,14 +58,14 @@ Examples:
     // [{name: 'Elie', title:'instructor'}, {name: 'Tim', title:'instructor'}, {name: 'Matt', title:'instructor'}, {name: 'Colt', title:'instructor'}]
 
 */
-function addKeyAndValue(arr,key,value){
+function addKeyAndValue(arr, key, value) {
     var newArr = [];
-	arr.forEach(function(val) {
-		var newObj = val;
-		newObj[key] = value;
-		newArr.push(newObj);
-	});
-	return newArr;
+    arr.forEach(function (val) {
+        var newObj = val;
+        newObj[key] = value;
+        newArr.push(newObj);
+    });
+    return newArr;
 }
 
 /*
@@ -78,25 +78,25 @@ Examples:
     vowelCount('hmmm') // {};
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
-function vowelCount(str){
-   function incrValue(obj, key) {
-        if(obj[key] === undefined) {
+function vowelCount(str) {
+    function incrValue(obj, key) {
+        if (obj[key] === undefined) {
             obj[key] = 1;
         } else {
-			obj[key]++;
+            obj[key]++;
         }
     }
-    
-    var newObj = {};
-	var lowerStr = str.toLowerCase();
-    lowerStr.split('').forEach(function(val) {
 
-		if (val == 'a') { incrValue(newObj, 'a'); }
-		else if (val == 'e') { incrValue(newObj, 'e'); }
-		else if (val == 'i') { incrValue(newObj, 'i'); }
-		else if (val == 'o') { incrValue(newObj, 'o'); }
-		else if (val == 'u') { incrValue(newObj, 'u'); };
+    var newObj = {};
+    var lowerStr = str.toLowerCase();
+    lowerStr.split('').forEach(function (val) {
+
+        if (val == 'a') { incrValue(newObj, 'a'); }
+        else if (val == 'e') { incrValue(newObj, 'e'); }
+        else if (val == 'i') { incrValue(newObj, 'i'); }
+        else if (val == 'o') { incrValue(newObj, 'o'); }
+        else if (val == 'u') { incrValue(newObj, 'u'); };
     });
 
-	return newObj;
+    return newObj;
 }

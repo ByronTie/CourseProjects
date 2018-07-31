@@ -1,10 +1,10 @@
 var obj = {
-	map: function (callback) {
-		var newArr = [];
-        this.forEach(function(value, index, arr) {
+    map: function (callback) {
+        var newArr = [];
+        this.forEach(function (value, index, arr) {
             newArr.push(callback(value, index, arr));
         });
-		return newArr;
+        return newArr;
     }
 }
 
@@ -16,8 +16,8 @@ Examples:
     extractValue(arr,'name') // ['Elie', 'Tim', 'Matt', 'Colt']
 */
 
-function extractValue(arr, key){
-    return arr.reduce(function(acc, nxt) {
+function extractValue(arr, key) {
+    return arr.reduce(function (acc, nxt) {
         acc.push(nxt[key]);
         return acc;
     }, []);
@@ -35,21 +35,21 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 
-function vowelCount(str){
-   var vowels = 'aeiou';
-   return str
-	.toLowerCase()
-    .split('')
-    .reduce(function(acc, nxt) {
-        if(vowels.indexOf(nxt) !== -1) {
-            if(nxt in acc) {
-                acc[nxt]++;
-            } else {
-                acc[nxt] = 1;
+function vowelCount(str) {
+    var vowels = 'aeiou';
+    return str
+        .toLowerCase()
+        .split('')
+        .reduce(function (acc, nxt) {
+            if (vowels.indexOf(nxt) !== -1) {
+                if (nxt in acc) {
+                    acc[nxt]++;
+                } else {
+                    acc[nxt] = 1;
+                }
             }
-        }
-        return acc;
-    }, {});
+            return acc;
+        }, {});
 }
 
 /*
@@ -67,11 +67,11 @@ Examples:
        ]
 */
 
-function addKeyAndValue(arr, key, value){
-    return arr.reduce(function(acc, nxt) {
-      nxt[key] = value;
-      acc.push(nxt);
-      return acc;
+function addKeyAndValue(arr, key, value) {
+    return arr.reduce(function (acc, nxt) {
+        nxt[key] = value;
+        acc.push(nxt);
+        return acc;
     }, []);
 }
 
@@ -98,12 +98,12 @@ Examples:
     partition(names, isLongerThanThreeCharacters) // [['Elie', 'Colt', 'Matt'], ['Tim']]
 */
 
-function partition(arr, callback){
+function partition(arr, callback) {
     var newArr = [];
-    newArr.push(arr.filter(function(value) {
+    newArr.push(arr.filter(function (value) {
         return callback(value);
     }));
-    newArr.push(arr.filter(function(value) {
+    newArr.push(arr.filter(function (value) {
         return !callback(value);
     }));
     return newArr;

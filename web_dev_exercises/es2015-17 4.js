@@ -1,8 +1,8 @@
-function specialMultiply (a) {
+function specialMultiply(a) {
     var b;
-    return function(b) {
-        return a*b;
-    }  
+    return function (b) {
+        return a * b;
+    }
 }
 
 function Vehicle(make, model, year) {
@@ -12,13 +12,13 @@ function Vehicle(make, model, year) {
     this.isRunning = false;
 }
 
-Vehicle.prototype.turnOn = function() {
+Vehicle.prototype.turnOn = function () {
     return this.isRunning = true;
 };
-Vehicle.prototype.turnOff = function() {
+Vehicle.prototype.turnOff = function () {
     return this.isRunning = false;
 };
-Vehicle.prototype.honk = function() {
+Vehicle.prototype.honk = function () {
     if (this.isRunning) {
         return "beep";
     }
@@ -63,40 +63,40 @@ function Person(firstName, lastName, favoriteColor, favoriteNumber) {
     this.favoriteColor = favoriteColor;
     this.favoriteNumber = favoriteNumber;
     this.family = [];
-  }
-  
-  Person.prototype.fullName = function() {
+}
+
+Person.prototype.fullName = function () {
     return this.firstName + ' ' + this.lastName;
-  }
-  Person.prototype.addToFamily = function(member) {
-    if(member instanceof Person && this.family.indexOf(member) !== -1 && member !== this) {
+}
+Person.prototype.addToFamily = function (member) {
+    if (member instanceof Person && this.family.indexOf(member) !== -1 && member !== this) {
         this.family.push(member);
     }
-    
+
     return this.family.length;
-  }
-  
-  
-  // PART II 
-  
-  // 1 - Implement your own version of Array.prototype.map. The function should accept a callback and return a new array with the result of the callback for each value in the array. 
-  
-  var oldMapFn = Array.prototype.map;
-  Array.prototype.map = function(fn) {
-      var newArr = [];
-      arr.forEach(function(value, index, arr) {
-          newArr.push(fn(value, index, arr));
-      });
-      return newArr;
-  }
-  
-  /* 2 - Implement a function called reverse that reverses a string and place it on the String.prototype
-  
-  Examples:
-      "test".reverse() // "tset"
-      "tacocat".reverse() // "tacocat"
-  */
-  
-  String.prototype.reverse = function() {
-      return this.split('').reverse().join('');
-  }
+}
+
+
+// PART II 
+
+// 1 - Implement your own version of Array.prototype.map. The function should accept a callback and return a new array with the result of the callback for each value in the array. 
+
+var oldMapFn = Array.prototype.map;
+Array.prototype.map = function (fn) {
+    var newArr = [];
+    arr.forEach(function (value, index, arr) {
+        newArr.push(fn(value, index, arr));
+    });
+    return newArr;
+}
+
+/* 2 - Implement a function called reverse that reverses a string and place it on the String.prototype
+ 
+Examples:
+    "test".reverse() // "tset"
+    "tacocat".reverse() // "tacocat"
+*/
+
+String.prototype.reverse = function () {
+    return this.split('').reverse().join('');
+}

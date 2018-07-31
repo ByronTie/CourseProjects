@@ -8,12 +8,12 @@ Examples:
     specialMultiply(3); // function(){}....
 */
 
-function specialMultiply(a,b){
+function specialMultiply(a, b) {
     function multiply(value) {
         return value * a;
     }
-    
-    if(arguments.length === 1) {
+
+    if (arguments.length === 1) {
         return multiply;
     } else {
         return multiply(b);
@@ -43,26 +43,26 @@ Examples (yours might not be like this, since the answer is random every time):
     game2(1) // "You are all done playing!"
 */
 
-function guessingGame(amount){
-   var guesses = 0;
-   var answer = Math.floor(Math.random() * 10) + 1;
-   
-   return function takeAGuess(value) {
-       if (guesses === amount) {
-           return "You are all done playing!";
-       } else {
-           guesses++;
-           
-           if (value === answer) {
-               guesses = amount;
-               return "You got it!";
-           } else if (guesses === amount) {
-               return "No more guesses the answer was " + answer;
-           } else if (value < answer) {
-               return "You're too low!";
-           } else {
-               return "You're too high!";
-           }
-       }
-   }
+function guessingGame(amount) {
+    var guesses = 0;
+    var answer = Math.floor(Math.random() * 10) + 1;
+
+    return function takeAGuess(value) {
+        if (guesses === amount) {
+            return "You are all done playing!";
+        } else {
+            guesses++;
+
+            if (value === answer) {
+                guesses = amount;
+                return "You got it!";
+            } else if (guesses === amount) {
+                return "No more guesses the answer was " + answer;
+            } else if (value < answer) {
+                return "You're too low!";
+            } else {
+                return "You're too high!";
+            }
+        }
+    }
 }
